@@ -38,8 +38,8 @@ OBJS:=$(patsubst %.o,%.obj,$(OBJS))
 TLSPATH_INC=-I T:/rome_tls/x86-win/encap/sdk0204/include
 ## Unix Options ##
 else
-CFLAGS = -g -Wall -Wno-unused-parameter -D$(ARCH)
-CC = $(CROSS_COMPILE)gcc
+CFLAGS = -g -Wall -Wno-unused-parameter -D$(ARCH) -static
+CC = $(CROSS_COMPILE)musl-gcc
 AGENTPROXY = $(CROSS_COMPILE)agent-proxy
 endif
 
